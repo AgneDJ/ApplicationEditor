@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table Reader</title>
+  </head>
+  <body>
+    <div
+      class="modal jimu-outline-inside fade show"
+      role="dialog"
+      tabindex="-1"
+      style="display: block"
+    >
+      <div
+        class="modal-dialog pps-station-modal app-root-emotion-cache-ltr-4c78l1"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Stotis: Merkys - Jašiūnai</h5>
+            <button
+              type="button"
+              class="close"
+              aria-label="Uždaryti"
+              title="Uždaryti"
+            >
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="jimu-icon svg-component app-root-emotion-cache-ltr-1vuz6dz"
+                width="16"
+                height="16"
+                aria-hidden="false"
+              >
+                <path
+                  d="m8.745 8 6.1 6.1a.527.527 0 1 1-.745.746L8 8.746l-6.1 6.1a.527.527 0 1 1-.746-.746l6.1-6.1-6.1-6.1a.527.527 0 0 1 .746-.746l6.1 6.1 6.1-6.1a.527.527 0 0 1 .746.746L8.746 8Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="d-flex flex-column modal-body modal-body">
+            <div class="d-flex align-items-center justify-content-start">
+              <label class="app-root-emotion-cache-ltr-1f20f96">
+                <span
+                  class="jimu-switch mr-2 app-root-emotion-cache-ltr-1f9hpcj checked jimu-interactive-node"
+                >
+                  <input
+                    role="switch"
+                    type="checkbox"
+                    class="form-check-input"
+                    checked=""
+                  />
+                  <span class="switch-slider"></span> </span
+                >Modifikuoti prognozės duomenys
+              </label>
+            </div>
+            <div class="d-flex flex-fill overflow-auto">
+              <div class="pps-edit-table-data">
+                <table>
+                  <thead style="z-index: 5">
+                    <tr>
+                      <th>Modeliavimo data</th>
+                      <th>Prognozavimo data</th>
+                      <th>Prognozuojama reikšmė</th>
+                      <th>
+                        <span title="Redaguojama">Atvaizduojama reikšmė</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2024-08-12 09:15:28</td>
+                      <td>2024-08-15 08:00:00</td>
+                      <td style="text-align: right">70.442</td>
+                      <td style="position: relative; text-align: right">
+                        <div
+                          class="d-flex align-items-center justify-content-end"
+                        >
+                          <div class="mr-1">70.4</div>
+                          <svg
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="jimu-icon jimu-icon-component svg-component app-root-emotion-cache-ltr-1vuz6dz"
+                            width="16"
+                            height="16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M11.226 1.312c-.403-.404-1.044-.417-1.431-.03L2.49 8.587l-.48 2.674a.637.637 0 0 0 .73.73l2.673-.48 7.305-7.306c.387-.387.374-1.028-.03-1.431l-1.462-1.462Zm-8.113 9.575.32-1.781 4.991-4.992 1.462 1.462-4.992 4.991-1.781.32Zm7.473-6.012 1.402-1.4-1.462-1.463-1.401 1.402 1.461 1.461Z"
+                              fill="currentColor"
+                            ></path>
+                            <path
+                              d="M1.5 14a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1h-13Z"
+                              fill="currentColor"
+                            ></path>
+                          </svg>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const table = document.querySelector(".pps-edit-table-data table");
+        if (table) {
+          const rows = table.querySelectorAll("tbody tr");
+          rows.forEach((row) => {
+            const cells = row.querySelectorAll("td");
+            const rowData = Array.from(cells).map((cell) =>
+              cell.innerText.trim()
+            );
+            console.log(rowData);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
